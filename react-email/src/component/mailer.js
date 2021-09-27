@@ -1,5 +1,8 @@
 import React from 'react'
 import emailjs from 'emailjs-com'
+import Mailer from '../component/Mailer.css'
+
+
 
 
 //create a function for emailjs and set it to default//
@@ -21,7 +24,39 @@ function sendEmail(e) {
 
 export default function mailer() {
     return (
-        <div callName="container border"
+
+        <card className="bg-light text-center text-lg-start">
+            <div className="contain p-4">
+                <div className="row">
+                    <div className="col-lg-6 col-md-12 mb-4 mb-md-0">
+                        <h5 className="text-uppercase">Thank you</h5>
+                        <p>
+                        Thank you for taking the time out of your busy schedule to view my portfolio. I would love to join your wonderful team. With my skills and qualifications, I’m a great candidate for this position. I am committed to learning any new skills on my own to succeed in this role.
+                        </p>
+                    </div>
+
+                    <form className="col-lg-6 col-md-12 mb-4 mb-md-0" 
+                         //create a function for onSubmit to send email// 
+                        onSubmit={sendEmail}>
+                        <h5 className="text-uppercase">Contact me</h5>
+                        <lable>Name</lable>
+                        <input type="text" name="name" className='form-control' />
+
+                        <lable>Email</lable>
+                        <input type="email" name="user_email" className='form-control' />
+
+                        <label>Message</label>
+                        <textarea name="message" rows="4" className='form-control' />
+                        <input type="submit" value="Send" className='form-control btn btn-primary'
+                            style={{ marginTop: "30px" }}
+                        />
+                    </form>
+
+
+                </div>
+            </div>
+
+            {/* <div callName="container border"
             style={{
                 marginLeft: 'auto',
                 marginRight: 'auto',
@@ -48,7 +83,8 @@ export default function mailer() {
                     style={{ marginTop: "30px" }}
                 />
             </form>
-        </div>
+            </div> */}
+        </card>
     )
 }
 

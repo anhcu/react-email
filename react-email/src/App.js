@@ -1,5 +1,5 @@
 import './App.css';
-import Mailer from './component/mailer';
+import Mailer from './component/Mailer';
 
 function App() {
   return (
